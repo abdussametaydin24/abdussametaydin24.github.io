@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehir içi Dolmuş Durağı | Resmi Web Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav">
+            <div class="brand">Dolmuş Durağı</div>
+            <input id="nav-toggle" type="checkbox" aria-label="Menüyü aç/kapat">
+            <label class="burger" for="nav-toggle" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="nav-links">
+                <a href="#ana-sayfa">Ana Sayfa</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#iletisim">İletişim</a>
+                <a href="#konum">Konum</a>
+                <a href="#gorus-oneri">Görüş & Öneri</a>
+            </nav>
+        </div>
+        <section id="ana-sayfa" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Giresun/Espiye Şehriçi Dolmuş Durağı</h1>
+                <p>Sefer saatleri, iletişim ve konum bilgileri burada.</p>
+                <div class="hero-actions">
+                    <a href="#gorus-oneri" class="btn primary">Görüş & Öneri Yaz</a>
+                    <a href="#konum" class="btn">Konumu Gör</a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="hakkimizda" class="section">
+            <div class="section-inner">
+                <h2>Hakkımızda</h2>
+                <p>Dolmuş durağımız yıllardır güvenli, hızlı ve ekonomik ulaşım için hizmet vermektedir. Amacımız, yolcularımıza güler yüzlü hizmet sunmak ve şehir içi ulaşımı kolaylaştırmaktır.</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Her gün 07:00 - 22:00</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Hat Bilgileri</h3>
+                        <p>Merkez, Hastane, Adliye ve Üniversite</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Ücret Bilgisi</h3>
+                        <p>SİVİL=30TL
+                            ÖĞRENCİ=20TL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim" class="section alt">
+            <div class="section-inner">
+                <h2>İletişim</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>Telefon</h4>
+                        <a href="tel:+905356559003">+90 535 655 90 03</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>E-posta</h4>
+                        <a href="mailto:ornek@durak.com">espiyesehirici28@durak.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Adres</h4>
+                        <p>Adabük Mah., Düzköy/Espiye/Giresun</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="konum" class="section">
+            <div class="section-inner">
+                <h2>Konum</h2>
+                <p>Harita üzerinden durağımızın yerini görebilir, yol tarifi alabilirsiniz.</p>
+                <div class="map-wrap">
+                    <iframe title="Dolmuş Durağı Konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=40.9640211,38.7403997&z=16&output=embed" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="gorus-oneri" class="section alt">
+            <div class="section-inner">
+                <h2>Görüş & Öneri</h2>
+                <form id="feedback-form" class="form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Ad Soyad</label>
+                            <input id="name" name="name" type="text" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Telefon (İsteğe bağlı)</label>
+                            <input id="phone" name="phone" type="tel" placeholder="05XX XXX XX XX" pattern="^\+?\d[\d\s]{8,}$">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field full">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Görüş ve önerilerinizi yazınız" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">Gönder</button>
+                        <button type="button" id="clear-feedback" class="btn">Tümünü Temizle</button>
+                    </div>
+                </form>
+
+                <div class="feedback-list">
+                    <h3>Yorumlar</h3>
+                    <ul id="comments"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© <span id="year"></span> Dolmuş Durağı. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
